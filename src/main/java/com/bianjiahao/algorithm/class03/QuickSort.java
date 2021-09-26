@@ -1,7 +1,5 @@
 package com.bianjiahao.algorithm.class03;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 /**
  * 快速排序
  * @author admin
@@ -90,7 +88,8 @@ public class QuickSort {
      * @param arr 需要进行排序的数组
      */
     public void quickSortVersion1(int[] arr){
-        if (arr == null || arr.length < 2){
+        int noNeedSortLength = 2;
+        if (arr == null || arr.length < noNeedSortLength){
             return;
         }
         partitionOfQuickSortVersion1(arr,0,arr.length - 1);
