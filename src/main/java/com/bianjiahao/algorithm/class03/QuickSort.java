@@ -1,5 +1,7 @@
 package com.bianjiahao.algorithm.class03;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
+
 /**
  * 快速排序
  * @author admin
@@ -81,5 +83,31 @@ public class QuickSort {
         // 因为最后一个数一直没有动，最后将最后一个数和大于区域的第一位进行交换
         swap(arr,r,more);
         return new int[] {lessEqual + 1,more};
+    }
+
+    /**
+     * 快速排序1.0
+     * @param arr 需要进行排序的数组
+     */
+    public void quickSortVersion1(int[] arr){
+        if (arr == null || arr.length < 2){
+            return;
+        }
+        partitionOfQuickSortVersion1(arr,0,arr.length - 1);
+    }
+
+    /**
+     * 快排1.0递归
+     * @param arr 需要进行排序的数组
+     * @param l 数组的左下标
+     * @param r 数组的右下标
+     */
+    public void partitionOfQuickSortVersion1(int[] arr,int l,int r){
+        if (l >= r){
+            return;
+        }
+        int middle = partition(arr, l, r);
+        partition(arr,l,middle - 1);
+        partition(arr,middle + 1,r);
     }
 }
