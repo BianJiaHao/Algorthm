@@ -2,7 +2,7 @@ package com.bianjiahao.algorithm.class03;
 
 /**
  * 快速排序
- * @author admin
+ * @author Obito
  * @date 2021-9-26
  */
 public class QuickSort {
