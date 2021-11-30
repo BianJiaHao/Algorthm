@@ -1,7 +1,5 @@
 package com.bianjiahao.algorithm.class06;
 
-import org.w3c.dom.Node;
-
 import java.util.HashMap;
 
 /**
@@ -18,6 +16,7 @@ public class CopyListWithRandom {
         public Node(int value) {
             this.value = value;
         }
+
     }
 
     public static Node copyListWithRand1(Node head) {
