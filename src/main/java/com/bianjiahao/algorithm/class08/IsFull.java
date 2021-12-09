@@ -42,4 +42,6 @@ public class IsFull {
         int nodeSize = leftInfo.nodesSize + rightInfo.nodesSize + 1;
         return new Info(height,nodeSize);
     }
+
+
 }
