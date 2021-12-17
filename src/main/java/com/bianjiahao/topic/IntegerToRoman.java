@@ -1,5 +1,9 @@
 package com.bianjiahao.topic;
 
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
 /**
  * 整数转罗马数字
  * @author Obito
@@ -24,7 +28,15 @@ public class IntegerToRoman {
         return roman.toString();
     }
 
-    public static void main(String[] args) {
-        System.out.println(intToRoman(100));
+    public static void main(String[] args) throws InterruptedException {
+        Semaphore semaphore = new Semaphore(2);
+        semaphore.acquire();
+        semaphore.acquire();
+        semaphore.acquire();
+        semaphore.acquire();
+        semaphore.acquire();
+
     }
+
+
 }
