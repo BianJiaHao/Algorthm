@@ -20,11 +20,4 @@ public class HanNuo {
             func(n, "left", "right", "mid");
         }
     }
-
-    public static void main(String[] args) {
-        int n = 3;
-        hanoi2(n);
-        System.out.println("============");
-    }
-
 }

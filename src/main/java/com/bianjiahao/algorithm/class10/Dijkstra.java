@@ -134,6 +134,4 @@ public class Dijkstra {
             return isEntered(node) && heapIndexMap.get(node) != -1;
         }
     }
-
-
 }
