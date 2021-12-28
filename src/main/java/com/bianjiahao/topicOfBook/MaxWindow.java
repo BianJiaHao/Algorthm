@@ -46,12 +46,12 @@ public class MaxWindow {
         int[] ints = new int[arr.length - size + 1];
         int index = 0;
         for (int i = 0; i < arr.length; i++) {
-            while (!queueMax.isEmpty() && arr[queueMax.peekLast()] < arr[i]){
+            while (!queueMax.isEmpty() && arr[queueMax.peekLast()] <= arr[i]){
                 queueMax.pollLast();
             }
-            queueMax.add(i);
+            queueMax.addLast(i);
             if (queueMax.peekFirst() == i - size){
-                queueMax.peekFirst();
+                queueMax.pollFirst();
             }
             if (i >= size - 1){
                 ints[index++]  = arr[queueMax.peekFirst()];
@@ -61,8 +61,8 @@ public class MaxWindow {
     }
 
     public static void main(String[] args) {
-        int[] ints = new int[]{4,3,5,4,3,3,6,7};
-        int[] maxWindow = getMaxNumber(ints, 3);
+        int[] ints = new int[]{4,3,5,4,3,3,6,7,9,1,4,5,6};
+        int[] maxWindow = getMaxNumber(ints, 4);
         for (int i = 0; i < maxWindow.length; i++) {
             System.out.print(maxWindow[i]);
         }
