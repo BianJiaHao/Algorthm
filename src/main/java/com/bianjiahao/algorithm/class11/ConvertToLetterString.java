@@ -5,7 +5,7 @@ package com.bianjiahao.algorithm.class11;
  * @author Obito
  */
 public class ConvertToLetterString {
-    
+
     public static int convertNumberToChar(String str) {
         if (str == null){
             return 0;
