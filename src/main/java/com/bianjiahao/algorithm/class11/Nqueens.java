@@ -37,7 +37,39 @@ public class Nqueens {
         return true;
     }
 
+    public static int getNumbersOptimization(int n){
+        if (n < 1){
+            return 0;
+        }
+        // 如果n = 8的话，limit 00……0011111111
+        int limit = n == 32 ? -1 : (1 << n) - 1;
+        return process2(limit,0,0,0);
+    }
+
+    private static int process2(int limit, int colLimit, int leftLimit, int rightLimit) {
+        if (colLimit == limit){
+            return 1;
+        }
+        int pos = limit & (~(colLimit | rightLimit | leftLimit));
+        int mostRightOne = 0;
+        int res = 0;
+        while (pos != 0){
+            mostRightOne = pos & (~pos + 1);
+            pos = pos - mostRightOne;
+            res += process2(limit,colLimit | mostRightOne,(leftLimit | mostRightOne) << 1,(rightLimit | mostRightOne) >>> 1);
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
-        System.out.println(getNumbers(5));
+        long time1 = System.currentTimeMillis();
+        System.out.println(getNumbers(14));
+        long time2 = System.currentTimeMillis();
+        System.out.println("常规方法用时：" + (time2 - time1) + "ms");
+
+        long time3 = System.currentTimeMillis();
+        System.out.println(getNumbersOptimization(14));
+        long time4 = System.currentTimeMillis();
+        System.out.println("位运算方法用时：" + (time4 - time3) + "ms");
     }
 }
