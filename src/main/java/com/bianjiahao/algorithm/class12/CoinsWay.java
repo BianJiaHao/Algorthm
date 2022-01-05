@@ -55,8 +55,8 @@ public class CoinsWay {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 5, 2, 3, 1 };
-        int sum = 350;
+        int[] arr = { 1,2,5 };
+        int sum = 11;
         System.out.println(violenceWay(arr,sum));
         System.out.println(dpWay(arr,sum));
     }
