@@ -16,7 +16,7 @@ public class LongestCommonSubsequence {
             dp[0][i] = Math.max(dp[0][i - 1],str1[0] == str2[i] ? 1 : 0);
         }
         for (int i = 1; i < str1.length; i++) {
-            dp[i][0] = Math.max(dp[0][i - 1],str1[i] == str2[0] ? 1 : 0);
+            dp[i][0] = Math.max(dp[i - 1][0],str1[i] == str2[0] ? 1 : 0);
         }
         for (int i = 1; i < str1.length; i++) {
             for (int j = 1; j < str2.length; j++) {
@@ -29,9 +29,10 @@ public class LongestCommonSubsequence {
         return dp[str1.length - 1][str2.length - 1];
     }
 
+
     public static void main(String[] args) {
-        String str1 = "ab123e4";
-        String str2 = "cde12de34";
+        String str1 = "abcde";
+        String str2 = "ace";
         System.out.println(dpWay(str1.toCharArray(),str2.toCharArray()));
     }
 }
