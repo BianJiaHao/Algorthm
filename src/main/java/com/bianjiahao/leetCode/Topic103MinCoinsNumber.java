@@ -1,7 +1,5 @@
 package com.bianjiahao.leetCode;
 
-import java.util.PriorityQueue;
-
 /**
  * 最少的硬币数量
  * @author Obito
@@ -35,7 +33,6 @@ public class Topic103MinCoinsNumber {
         }
         dp[index][amount] = ans == Integer.MAX_VALUE ? -1 : ans;
         return dp[index][amount];
-
     }
 
     public static void main(String[] args) {
