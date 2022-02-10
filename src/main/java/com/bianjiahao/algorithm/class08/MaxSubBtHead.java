@@ -58,8 +58,8 @@ public class MaxSubBtHead {
                 maxSubBsSize = rightInfo.maxSubBsSize;
             }
         }
-        if ((leftInfo == null ? true : (leftInfo.maxSubBsHead == head.left && leftInfo.max < head.value))
-                && (rightInfo == null ? true : (rightInfo.maxSubBsHead == head.right && rightInfo.min > head.value))){
+        boolean flag = (leftInfo == null || (leftInfo.maxSubBsHead == head.left && leftInfo.max < head.value)) && (rightInfo == null || (rightInfo.maxSubBsHead == head.right && rightInfo.min > head.value));
+        if (flag){
             maxSubBsHead = head;
             maxSubBsSize = (leftInfo == null ? 0 : leftInfo.maxSubBsSize) + (rightInfo == null ? 0 : rightInfo.maxSubBsSize) + 1;
         }

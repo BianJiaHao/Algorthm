@@ -4,15 +4,15 @@ package com.bianjiahao.algorithm.class08;
  * 判断一个二叉树是否是平衡二叉树
  * @author BianJiaHao
  */
-public class isBalanceTree {
+public class IsBalanceTree {
 
-    public static class Node {
+    public static class TreeNode {
 
         public int value;
-        public Node left;
-        public Node right;
+        public TreeNode left;
+        public TreeNode right;
 
-        public Node(int value) {
+        public TreeNode(int value) {
             this.value = value;
         }
     }
@@ -27,20 +27,20 @@ public class isBalanceTree {
         }
     }
 
-    public static Info isBalanceTreeMethed(Node head){
+    public static Info isBalanceTreeMethod(TreeNode head){
         if (head == null){
             return new Info(true,0);
         }
 
-        Info leftInfo = isBalanceTreeMethed(head.left);
-        Info rightInfo = isBalanceTreeMethed(head.right);
+        Info leftInfo = isBalanceTreeMethod(head.left);
+        Info rightInfo = isBalanceTreeMethod(head.right);
         int height = Math.max(leftInfo.maxHeight,rightInfo.maxHeight) + 1;
         boolean isBalance = leftInfo.isBalance && rightInfo.isBalance && Math.abs(leftInfo.maxHeight - rightInfo.maxHeight) <= 1;
         return new Info(isBalance,height);
     }
 
-    public static boolean isBalance(Node head){
-        return isBalanceTreeMethed(head).isBalance;
+    public static boolean isBalance(TreeNode head){
+        return isBalanceTreeMethod(head).isBalance;
     }
 
 }
