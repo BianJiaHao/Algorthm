@@ -217,23 +217,34 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
-        int testTime = 500000;
-        int maxSize = 100;
-        int maxValue = 100;
-        boolean succeed = true;
-        for (int i = 0; i < testTime; i++) {
-            int[] arr1 = generateRandomArray(maxSize, maxValue);
-            int[] arr2 = copyArray(arr1);
-            int[] arr3 = copyArray(arr1);
-            quickSortVersion1(arr1);
-            quickSortVersion2(arr2);
-            quickSortVersion3(arr3);
-            if (arrIsEqual(arr1, arr2) || arrIsEqual(arr2, arr3)) {
-                succeed = false;
-                break;
-            }
+//        int testTime = 500000;
+//        int maxSize = 100;
+//        int maxValue = 100;
+//        boolean succeed = true;
+//        for (int i = 0; i < testTime; i++) {
+//            int[] arr1 = generateRandomArray(maxSize, maxValue);
+//            int[] arr2 = copyArray(arr1);
+//            int[] arr3 = copyArray(arr1);
+//            quickSortVersion1(arr1);
+//            quickSortVersion2(arr2);
+//            quickSortVersion3(arr3);
+//            if (arrIsEqual(arr1, arr2) || arrIsEqual(arr2, arr3)) {
+//                succeed = false;
+//                break;
+//            }
+//        }
+//        System.out.println(succeed ? "Nice!" : "Oops!");
+
+
+        try {
+
+            Class<?> aClass = QuickSort.class.getClassLoader().loadClass("com.bianjiahao.algorithm.class04.Heap01");
+            System.out.println(aClass.getName());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
-        System.out.println(succeed ? "Nice!" : "Oops!");
+
+
     }
 
 }
