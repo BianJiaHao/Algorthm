@@ -8,7 +8,6 @@ import java.util.Stack;
  */
 public class VisiblePeaks {
 
-
     public static class Record {
         private final int value;
         private int count;
@@ -17,7 +16,6 @@ public class VisiblePeaks {
             this.value = value;
             this.count = 1;
         }
-
     }
 
     public static int getCount(int[] arr) {

@@ -11,7 +11,7 @@ public class Heap01 {
      */
     static class MyMaxHeap{
         // 定义堆
-        private int[] heap;
+        private final int[] heap;
         // 定义堆大小的最大值
         private final int limit;
         // 定义堆的大小
