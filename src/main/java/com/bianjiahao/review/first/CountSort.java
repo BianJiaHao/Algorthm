@@ -1,5 +1,9 @@
 package com.bianjiahao.review.first;
 
+import java.util.HashMap;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
+
 public class CountSort {
 
     public static void countSort(int[] arr) {
@@ -19,6 +23,20 @@ public class CountSort {
             while (bucket[j]-- > 0) {
                 arr[i++] = j;
             }
+        }
+
+    }
+
+    public static void main(String[] args) {
+        final HashMap<String, String> map = new HashMap<String, String>(2);
+        for (int i = 0; i < 10000000; i++) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    map.put(UUID.randomUUID().toString(), "");
+                    map.get(UUID.randomUUID().toString());
+                }
+            }).start();
         }
     }
 }
