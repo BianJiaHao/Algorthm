@@ -58,7 +58,7 @@ public class IsPalindromeList {
         }
         return true;
     }
-    
+
     public static boolean isPalindromeListOptimalSolution(Node head) {
         if (head == null) {
             return false;
