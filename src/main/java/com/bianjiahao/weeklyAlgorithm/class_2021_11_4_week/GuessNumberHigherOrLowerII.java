@@ -50,7 +50,7 @@ public class GuessNumberHigherOrLowerII {
     public static void main(String[] args) {
 
         long dpStartTime = System.currentTimeMillis();
-        int dpAns = dpWay(500);
+        int dpAns = dpWay(25);
         long dpEndTime = System.currentTimeMillis();
         System.out.println("动态规划的结果为：" + " " + dpAns +" " + "用时：" + (dpEndTime - dpStartTime) + " " + "ms");
 
@@ -58,7 +58,6 @@ public class GuessNumberHigherOrLowerII {
         int violenceAns = violenceProcess(25);
         long violenceEndTime = System.currentTimeMillis();
         System.out.println("暴力递归的结果为：" + " " + violenceAns +" " + "用时：" + (violenceEndTime - violenceStartTime) + " " + "ms");
-
 
     }
 

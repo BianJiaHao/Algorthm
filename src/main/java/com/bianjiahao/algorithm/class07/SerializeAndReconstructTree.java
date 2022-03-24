@@ -88,7 +88,7 @@ public class SerializeAndReconstructTree {
             return null;
         }
         Node head = generateNode(levelList.poll());
-        Queue<Node> queue = new LinkedList<Node>();
+        Queue<Node> queue = new LinkedList<>();
         if (head != null){
             queue.add(head);
         }
