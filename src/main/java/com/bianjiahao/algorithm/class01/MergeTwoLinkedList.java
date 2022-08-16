@@ -35,5 +35,7 @@ public class MergeTwoLinkedList {
         pre.next = curL == null ? curS : curL;
 
         return head;
+
+        
     }
 }
